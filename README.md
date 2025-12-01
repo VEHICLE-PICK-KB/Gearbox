@@ -71,12 +71,8 @@ http://localhost:8080/h2-console
 Default JDBC URL:
 jdbc:h2:mem:testdb
 
-## ▶️ Running the Project
-mvn spring-boot:run
-# or
-./mvnw spring-boot:run
 
-🧪 Test Data
+## 🧪 Test Data
 
 The project includes data.sql that loads sample gearboxes into H2:
 
@@ -85,7 +81,7 @@ VALUES
 (1, '8HP70', 'automatic', 8, 'ZF', 2017),
 (2, 'DCT450', 'dual-clutch', 6, 'Getrag', 2015);
 
-🧩 Project Structure
+## 🧩 Project Structure
 src/
  ├─ main/
  │   ├─ java/.../controller/GearboxController.java
