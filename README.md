@@ -35,6 +35,7 @@ A simple Spring Boot REST API for managing car gearboxes.
   "manufacturer": "ZF",
   "year": 2017
 }
+```json
 
 ## 🛠 API Endpoints
 GET /api/gearboxes
