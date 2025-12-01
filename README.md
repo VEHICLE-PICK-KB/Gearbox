@@ -35,8 +35,7 @@ A simple Spring Boot REST API for managing car gearboxes.
   "manufacturer": "ZF",
   "year": 2017
 }
-```json
-
+```
 ## 🛠 API Endpoints
 GET /api/gearboxes
 
@@ -52,6 +51,7 @@ Creates a new gearbox.
 
 Example request body:
 
+```json
 {
   "model": "DCT450",
   "type": "dual-clutch",
@@ -59,8 +59,9 @@ Example request body:
   "manufacturer": "Getrag",
   "year": 2015
 }
+```
 
-🗄 Database (H2)
+## 🗄 Database (H2)
 
 H2 console is enabled at:
 
@@ -70,7 +71,7 @@ http://localhost:8080/h2-console
 Default JDBC URL:
 jdbc:h2:mem:testdb
 
-▶️ Running the Project
+## ▶️ Running the Project
 mvn spring-boot:run
 # or
 ./mvnw spring-boot:run
