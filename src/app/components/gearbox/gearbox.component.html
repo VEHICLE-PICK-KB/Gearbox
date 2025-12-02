@@ -1,0 +1,151 @@
+<H1>Gearbox List View</H1>
+
+<section class="gearbox-list">
+    <h2>Gearboxes</h2>
+
+    <ng-container *ngIf="gearboxes && gearboxes.length; else noGearboxes">
+      <table>
+        <thead>
+          <tr>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Gears</th>
+            <th>Year</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let g of gearboxes">
+            <td>{{ g.manufacturer }}</td>
+            <td>{{ g.model }}</td>
+            <td>{{ g.type }}</td>
+            <td>{{ g.gears }}</td>
+            <td>{{ g.manufyear }}</td>
+            <td class="actions">
+              <button type="button" (click)="editGearbox(g)">Edit data</button>
+              <button type="button" (click)="deleteGearbox(g.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+
+    <ng-template #noGearboxes>
+      <p>No gearboxes yet. Add one using the form below.</p>
+    </ng-template>
+  </section>
+
+
+<form (ngSubmit)="saveGearbox(gearboxForm)" #gearboxForm="ngForm" class="gearbox-form">
+    <h2>{{ isEditing ? 'Edit gearbox data' : 'Add a new gearbox' }}</h2>
+
+    <div class="form-row">
+      <label for="model">Model</label>
+      <input
+        id="model"
+        name="model"
+        type="text"
+        minlength="2"
+        [(ngModel)]="currentGearbox.model"
+        required
+        placeholder="Ex. 8HP"
+        #model="ngModel"
+      />
+    </div>
+    <div class="error" *ngIf="model.invalid && model.touched">
+      <small *ngIf="model.errors?.['required']">Model is required.</small>
+      <small *ngIf="model.errors?.['minlength']">Model must be at least 2 characters.</small>
+    </div>
+
+    <div class="form-row">
+  <label for="manufacturer">Manufacturer</label>
+  <input
+    id="manufacturer"
+    name="manufacturer"
+    type="text"
+    required
+    minlength="2"
+    placeholder="Ex. ZF"
+    [(ngModel)]="currentGearbox.manufacturer"
+    #manufacturer="ngModel"
+  />
+</div>
+ <div class="error" *ngIf="manufacturer.invalid && manufacturer.touched">
+  <small *ngIf="manufacturer.errors?.['required']"> Manufacturer is required.</small>
+  <small *ngIf="manufacturer.errors?.['minlength']">Manufacturer must be at least 2 characters.</small>
+
+ </div>
+    <div class="form-row">
+  <label for="type">Type</label>
+  <select
+    id="type"
+    name="type"
+    [(ngModel)]="currentGearbox.type"
+    required
+    #type="ngModel"
+  >
+    <option value="" disabled selected>Select type</option>
+    <option *ngFor="let t of gearTypes" [value]="t">
+    {{ t }}
+    </option>
+  </select>
+
+  <div class="error" *ngIf="type.invalid && type.touched">
+    <small>Type is required.</small>
+  </div>
+</div>
+
+    <div class="form-row">
+  <label for="gears">Gears</label>
+  <input
+    id="gears"
+    name="gears"
+    type="number"
+    required
+    min="1"
+    max="9"
+    placeholder="1-9"
+    [(ngModel)]="currentGearbox.gears"
+    #gears="ngModel"
+  />
+</div>
+<div class="error" *ngIf="gears.invalid && gears.touched">
+    <small *ngIf="gears.errors?.['required']">Gears value required.</small>
+    <small *ngIf="gears.errors?.['min']">Minimum is 1.</small>
+    <small *ngIf="gears.errors?.['max']">Maximum is 9.</small>
+</div>
+
+<div class="form-row">
+  <label for="manufyear">Year</label>
+  <input
+    id="manufyear"
+    name="manufyear"
+    type="number"
+    [(ngModel)]="currentGearbox.manufyear"
+    required
+    min="1886"
+    max="2026"
+    [(ngModel)]="currentGearbox.manufyear"
+    #manufyear="ngModel"
+  />
+</div>
+
+<div class="error" *ngIf="manufyear.invalid && manufyear.touched">
+    <small *ngIf="manufyear.errors?.['required']">Year is required.</small>
+    <small *ngIf="manufyear.errors?.['min']">Minimum 1886.</small>
+    <small *ngIf="manufyear.errors?.['max']">Maximum 2026.</small>
+  </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="gearboxForm.invalid">
+        {{ isEditing ? 'Save changes' : 'Add' }}
+      </button>
+
+      <button type="button" *ngIf="isEditing" (click)="resetForm()">
+        Cancel
+      </button>
+    </div>
+  </form>
+
+  <hr />
