@@ -49,6 +49,10 @@ POST /api/gearboxes
 
 Creates a new gearbox.
 
+PUT /api/gearboxes/{id}
+
+Edits existing entry
+
 Example request body:
 
 ```json
