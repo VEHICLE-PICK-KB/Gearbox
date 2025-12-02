@@ -18,18 +18,18 @@ public class Gearbox {
     private String type;
     private int gears;
     private String manufacturer;
-    private int Manufyear;
+    private int manufyear;
 
 public Gearbox() {
 
 }
 
-public Gearbox(String model, String type, int gears, String manufacturer, int year) {
+public Gearbox(String model, String type, int gears, String manufacturer, int manufyear) {
         this.model = model;
         this.type = type;
         this.gears = gears;
         this.manufacturer = manufacturer;
-        this.Manufyear = year;
+        this.manufyear = manufyear;
     }
 
 public Long getId() {
@@ -52,8 +52,8 @@ public Long getId() {
         return manufacturer;
     }
 
-    public int getYear() {
-        return Manufyear;
+    public int getManufyear() {
+        return manufyear;
     }
 
     public void setModel(String model) {
@@ -72,8 +72,8 @@ public Long getId() {
         this.manufacturer = manufacturer;
     }
 
-    public void setYear(int year) {
-        this.Manufyear = year;
+    public void setManufyear(int year) {
+        this.manufyear = year;
     }
 
 }

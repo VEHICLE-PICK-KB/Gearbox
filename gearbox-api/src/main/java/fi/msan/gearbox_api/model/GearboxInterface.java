@@ -17,7 +17,7 @@ public interface GearboxInterface extends JpaRepository<Gearbox, Long> {
 
     List<Gearbox> findByType(String type);
 
-    List<Gearbox> findByYear(int year);
+    List<Gearbox> findByManufyear(int manufyear);
 
     @Query("SELECT * FROM Gearbox WHERE type = :type AND gears = :gears" )
     List<Gearbox> searchByTypeAndGears(@Param("type") String type, @Param("gears") int gears);

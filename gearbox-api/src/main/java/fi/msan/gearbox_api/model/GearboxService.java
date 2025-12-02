@@ -25,22 +25,26 @@ public class GearboxService {
 
     public Gearbox create(Gearbox gearbox) {
 
-        if (gearbox.getModel()==null){
-            throw new IllegalArgumentException("Gearbox must have a model!");
+        if (gearbox.getModel()==null || gearbox.getModel().trim().length() < 2){
+            throw new IllegalArgumentException("Gearbox must have a model or enough characters!");
         }
 
-        if (gearbox.getGears() <= 0){
-            throw new IllegalArgumentException("No gears?");
+        if(gearbox.getManufacturer()==null || gearbox.getManufacturer().trim().length() < 2){
+            throw new IllegalArgumentException("Gearbox must have a manufacturer or enough characters!");
+        }
+
+        if (gearbox.getGears() < 1 || gearbox.getGears() > 9){
+            throw new IllegalArgumentException("Gears must be between 1-9!");
 
         }
 
-        if (gearbox.getYear() < 1886 || gearbox.getYear() > 2026) {
-            throw new IllegalArgumentException("Year must be between 1900 and 2035.");
+        if (gearbox.getManufyear() < 1886 || gearbox.getManufyear() > 2026) {
+            throw new IllegalArgumentException("Year must be between 1886 and 2026.");
         }
 
         List<String> allowedTypes = List.of("Automatic", "Manual", "Sequential", "CVT");
 
-        if (!allowedTypes.contains(gearbox.getType().toLowerCase())) {
+        if (!allowedTypes.contains(gearbox.getType())) {
             throw new IllegalArgumentException("Type must be one of the following: " + allowedTypes);
         }
 
@@ -63,8 +67,8 @@ public class GearboxService {
         return repo.findByManufacturer(manufacturer);
     }
 
-    public List<Gearbox> findByYear(int year) {
-        return repo.findByYear(year);
+    public List<Gearbox> findByManufyear(int manufyear) {
+        return repo.findByManufyear(manufyear);
     }
 
     public List<Gearbox> findByTypeAndGears(String type, int gears){
@@ -80,6 +84,29 @@ public class GearboxService {
 
       public Gearbox update(Long id, Gearbox updated) {
 
+        if (updated.getModel()==null || updated.getModel().trim().length() < 2){
+            throw new IllegalArgumentException("Gearbox must have a model or enough characters!");
+        }
+
+        if(updated.getManufacturer()==null || updated.getManufacturer().trim().length() < 2){
+            throw new IllegalArgumentException("Gearbox must have a manufacturer or enough characters!");
+        }
+
+        if (updated.getGears() < 1 || updated.getGears() > 9){
+            throw new IllegalArgumentException("Gears must be between 1-9!");
+
+        }
+
+        if (updated.getManufyear() < 1886 || updated.getManufyear() > 2026) {
+            throw new IllegalArgumentException("Year must be between 1886 and 2026.");
+        }
+
+        List<String> allowedTypes = List.of("Automatic", "Manual", "Sequential", "CVT");
+
+        if (!allowedTypes.contains(updated.getType())) {
+            throw new IllegalArgumentException("Type must be one of the following: " + allowedTypes);
+        }
+
         
         Gearbox existing = repo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Gearbox with id " + id + " not found"));
@@ -88,7 +115,7 @@ public class GearboxService {
         existing.setType(updated.getType());
         existing.setGears(updated.getGears());
         existing.setManufacturer(updated.getManufacturer());
-        existing.setYear(updated.getYear());
+        existing.setManufyear(updated.getManufyear());
 
         return repo.save(existing);
 }

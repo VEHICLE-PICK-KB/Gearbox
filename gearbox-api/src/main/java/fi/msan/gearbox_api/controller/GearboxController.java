@@ -38,7 +38,7 @@ public class GearboxController {
     return ResponseEntity.created(location).body(created);
 
  } 
- @PutMapping("path/{id}")
+ @PutMapping("/{id}")
  public ResponseEntity<Gearbox> edit(@PathVariable Long id, @RequestBody Gearbox updated) {
 
      Gearbox result = service.update(id, updated);
@@ -50,6 +50,9 @@ public class GearboxController {
             service.delete(id);
             return ResponseEntity.noContent().build();}
 
-
+@ExceptionHandler(IllegalArgumentException.class)
+public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException ex){
+    return ResponseEntity.badRequest().body(ex.getMessage());
+}
 
 }

@@ -23,7 +23,7 @@ public CommandLineRunner loadData(GearboxInterface GBI) {
 
         GBI.save(new Gearbox(
                 "8HP70",
-                "automatic",
+                "Automatic",
                 8,
                 "ZF",
                 2017
@@ -31,7 +31,7 @@ public CommandLineRunner loadData(GearboxInterface GBI) {
 
         GBI.save(new Gearbox(
                 "DCT450",
-                "dual-clutch",
+                "Dual-clutch",
                 6,
                 "Getrag",
                 2015
@@ -39,15 +39,15 @@ public CommandLineRunner loadData(GearboxInterface GBI) {
 
         GBI.save(new Gearbox(
                 "A750F",
-                "automatic",
+                "Automatic",
                 5,
                 "Aisin",
                 2009
         ));
 
         GBI.save(new Gearbox(
-                "Tremec TR-6060",
-                "manual",
+                "TR-6060",
+                "Manual",
                 6,
                 "Tremec",
                 2008
