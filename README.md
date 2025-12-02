@@ -78,7 +78,7 @@ jdbc:h2:mem:testdb
 
 ## 🧪 Test Data
 
-The project includes data.sql that loads sample gearboxes into H2:
+Test data uploaded into H2 in each startup:
 
 INSERT INTO GEARBOX (id, model, type, gears, manufacturer, year)
 VALUES
@@ -89,9 +89,8 @@ VALUES
 src/
  ├─ main/
  │   ├─ java/.../controller/GearboxController.java
- │   ├─ java/.../service/GearboxService.java
- │   ├─ java/.../repository/GearboxRepository.java
+ │   ├─ java/.../model/GearboxService.java
+ │   ├─ java/.../model/GearboxInterface.java
  │   └─ java/.../model/Gearbox.java
  └─ resources/
      ├─ application.properties
-     └─ data.sql
