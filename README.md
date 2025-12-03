@@ -1,32 +1,32 @@
-Gearbox REST API (Spring Boot)
+# Gearbox Application  
+Fullstack project with **Spring Boot Backend** and **Angular Frontend**
 
+## 📦 Overview
+This repository contains:
+- 🚀 **Gearbox REST API** built with Spring Boot  
+- 🎨 **Gearbox Frontend** built with Angular  
+Both combine to form a complete CRUD application for managing car gearboxes.
 
-# Gearbox REST API
+---
 
-A simple Spring Boot REST API for managing car gearboxes.  
+# 🟥 Backend — Gearbox REST API (Spring Boot)
 
 ## 🔧 Technologies Used
 - Java 17+
-- Spring Boot
-- Spring Web
-- Spring Data JPA
+- Spring Boot (Web, Data JPA)
 - H2 in-memory database
-- Maven or Gradle
+- Maven / Gradle
 - Git & GitHub
 
 ## 📦 Features
 - Create new gearboxes
 - List all gearboxes
-- Get a single gearbox by ID
-- Example fields:
-  - `model` (e.g. ZF 8HP70)
-  - `type` (automatic, manual, dual-clutch)
-  - `gears` (number of gears)
-  - `manufacturer`
-  - `year`
+- Get a gearbox by ID
+- Update an existing gearbox
+- Delete a gearbox
+- Validation on both POST and PUT requests
 
-## 🚗 Example Gearbox JSON
-
+### Example Gearbox JSON
 ```json
 {
   "model": "8HP70",
@@ -36,25 +36,22 @@ A simple Spring Boot REST API for managing car gearboxes.
   "year": 2017
 }
 ```
-## 🛠 API Endpoints
-GET /api/gearboxes
 
+## 🛠 API Endpoints
+
+### GET /api/gearboxes  
 Returns all gearboxes.
 
-GET /api/gearboxes/{id}
+### GET /api/gearboxes/{id}  
+Returns gearbox by ID.
 
-Returns a single gearbox by ID.
-
-POST /api/gearboxes
-
+### POST /api/gearboxes  
 Creates a new gearbox.
 
-PUT /api/gearboxes/{id}
+### PUT /api/gearboxes/{id}  
+Updates an existing gearbox.
 
-Edits existing entry
-
-Example request body:
-
+Example:
 ```json
 {
   "model": "DCT450",
@@ -65,32 +62,105 @@ Example request body:
 }
 ```
 
+### DELETE /api/gearboxes/{id}  
+Deletes a gearbox.
+
+---
+
 ## 🗄 Database (H2)
 
-H2 console is enabled at:
-
+H2 console is available at:
+```
 http://localhost:8080/h2-console
-
+```
 
 Default JDBC URL:
+```
 jdbc:h2:mem:testdb
+```
 
-
-## 🧪 Test Data
-
-Test data uploaded into H2 in each startup:
-
+### Example Test Data
+```sql
 INSERT INTO GEARBOX (id, model, type, gears, manufacturer, year)
 VALUES
 (1, '8HP70', 'automatic', 8, 'ZF', 2017),
 (2, 'DCT450', 'dual-clutch', 6, 'Getrag', 2015);
+```
 
-## 🧩 Project Structure
+---
+
+## 🧩 Backend Project Structure
+```
 src/
  ├─ main/
  │   ├─ java/.../controller/GearboxController.java
- │   ├─ java/.../model/GearboxService.java
- │   ├─ java/.../model/GearboxInterface.java
+ │   ├─ java/.../service/GearboxService.java
+ │   ├─ java/.../repository/GearboxInterface.java
  │   └─ java/.../model/Gearbox.java
  └─ resources/
-     ├─ application.properties
+     └─ application.properties
+```
+
+---
+
+# 🟦 Frontend — Angular Application
+
+Generated with **Angular CLI 17.3.17**
+
+## ▶ Development server
+Run:
+```
+ng serve
+```
+
+Open:
+```
+http://localhost:4200/
+```
+
+The app reloads automatically on file changes.
+
+## 🧱 Code scaffolding
+Use:
+```
+ng generate component component-name
+```
+or generate:
+- directive
+- pipe
+- service
+- class
+- guard
+- interface
+- enum
+- module
+
+## 🏗 Build
+```
+ng build
+```
+Build artifacts are stored in `dist/`.
+
+## 🧪 Running unit tests
+```
+ng test
+```
+
+## 🔍 Running end-to-end tests
+(Configure with your preferred E2E tool)
+
+---
+
+# ✔ Summary
+This fullstack project demonstrates:
+- RESTful API development with Spring Boot  
+- Angular frontend with form validation  
+- Full CRUD functionality  
+- Git branching and merging workflow  
+- Clean code and separation of concerns  
+
+---
+
+# 📬 Author
+Matias – Fullstack Developer (Spring Boot + Angular)
+

@@ -1,0 +1,85 @@
+.gearbox-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.gearbox-form {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form-row input {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.form-actions button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.form-actions button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gearbox-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gearbox-list th,
+.gearbox-list td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.gearbox-list th {
+  background: #f5f5f5;
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+}
