@@ -172,5 +172,4 @@ This fullstack project demonstrates:
 ---
 
 # 📬 Author
-Matias – Fullstack Developer (Spring Boot + Angular)
-
+Vehicle-pick-kb – Fullstack Developer
