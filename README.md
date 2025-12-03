@@ -1,5 +1,15 @@
-# Gearbox Application  
+# Gearbox Application (WIP)
 Fullstack project with **Spring Boot Backend** and **Angular Frontend**
+
+# TODO: 
+Functionality:
+Implement, search, data filtering by criteria, paging and sorting.
+
+Features:
+Gear ratio creation/calculator, gear ratio viewer/editor, simulated driving speeds with engine rpm, animated gearbox?
+
+Authentication:
+Users, Authentication (Spring security or JWT token), saving configurations and lists.
 
 ## 📦 Overview
 This repository contains:
