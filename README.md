@@ -172,4 +172,5 @@ This fullstack project demonstrates:
 ---
 
 # 📬 Author
-Vehicle-pick-kb – Fullstack Developer
+VEHICLE-PICK-KB  
+# Fullstack Developer
