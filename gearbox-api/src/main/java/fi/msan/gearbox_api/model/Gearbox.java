@@ -72,8 +72,8 @@ public Long getId() {
         this.manufacturer = manufacturer;
     }
 
-    public void setManufyear(int year) {
-        this.manufyear = year;
+    public void setManufyear(int manufyear) {
+        this.manufyear = manufyear;
     }
 
 }
