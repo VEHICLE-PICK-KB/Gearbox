@@ -99,18 +99,6 @@ VALUES
 
 ---
 
-## 🧩 Backend Project Structure
-```
-src/
- ├─ main/
- │   ├─ java/.../controller/GearboxController.java
- │   ├─ java/.../service/GearboxService.java
- │   ├─ java/.../repository/GearboxInterface.java
- │   └─ java/.../model/Gearbox.java
- └─ resources/
-     └─ application.properties
-```
-
 ---
 
 # 🟦 Frontend — Angular Application
