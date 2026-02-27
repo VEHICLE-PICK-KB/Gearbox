@@ -1,5 +1,5 @@
 # Gearbox Application (WIP)
-Fullstack project with **Spring Boot Backend** and **Angular Frontend**
+Fullstack project with **Spring Boot Backend** and **Angular Frontend** to practice Angular syntax. This project can later simulate gearbox ratios and vehicle speed which can be useful for certain driving games.
 
 # TODO: 
 Functionality:
