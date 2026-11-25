@@ -161,4 +161,3 @@ This fullstack project demonstrates:
 
 # 📬 Author
 VEHICLE-PICK-KB  
-# Fullstack Developer
